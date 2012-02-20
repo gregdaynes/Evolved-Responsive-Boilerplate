@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.6/template-install.dtd">
+<extension version="2.5" type="template" client="site">
+	<name>Bootstrap Responsive</name>
+	<creationDate></creationDate>
+	<author></author>
+	<authorEmail></authorEmail>
+	<authorUrl></authorUrl>
+	<copyright></copyright>
+	<license>GNU/GPL</license>
+	<version>1.0</version>
+	<description></description>
+	
+	<files>
+		<filename>index.php</filename>
+	</files>
+	
+	<positions>
+	</positions>
+	
+	<config>
+		<fields name="params">
+			<fieldset name="general">
+			</fieldset>
+		</fields>
+	</config>
+</extension>
