@@ -6,6 +6,9 @@ $app = JFactory::getApplication();
 $document = JFactory::getDocument();
 $dir = 'templates/'.$app->getTemplate();
 
+JError::raiseWarning(200, 'test message');
+JError::raiseNotice(100, 'test');
+
 // cleaner
 $this->setGenerator('/humans.txt');
 unset($document->_links['/index.php?format=feed&amp;type=rss']);
@@ -21,17 +24,33 @@ $document->setMetaData('charset', 'utf-8' );
 $document->setMetaData('X-UA-Compatible', 'IE=edge,chrome=1', true);
 
 // stylesheets
-$document->addStylesheet($dir.'/css/bootstrap.css');
-$document->addStylesheet($dir.'/css/responsive.css');
+$document->addStylesheet($dir.'/css/template_css.css');
 
 // javascript
 $document->addScript($dir.'/js/modernizr-2.5.3.js');
-$document->addScript($dir.'/js/mootools-core-1.4.4-full-nocompat.js', 'text/javascript', true);
-$document->addScript($dir.'/js/mootools-more-1.4.0.1.js', 'text/javascript', true);
+$document->addScript($dir.'/js/jquery-1.7.1.js');
+$document->addScript($dir.'/bootstrap/js/bootstrap-alert.js');
+$document->addScript($dir.'/bootstrap/js/bootstrap-button.js');
+$document->addScript($dir.'/bootstrap/js/bootstrap-carousel.js');
+$document->addScript($dir.'/bootstrap/js/bootstrap-collapse.js');
+$document->addScript($dir.'/bootstrap/js/bootstrap-dropdown.js');
+$document->addScript($dir.'/bootstrap/js/bootstrap-modal.js');
+//$document->addScript($dir.'/bootstrap/js/bootstrap-popover.js');
+$document->addScript($dir.'/bootstrap/js/bootstrap-scrollspy.js');
+$document->addScript($dir.'/bootstrap/js/bootstrap-tab.js');
+$document->addScript($dir.'/bootstrap/js/bootstrap-tooltip.js');
+$document->addScript($dir.'/bootstrap/js/bootstrap-transition.js');
+$document->addScript($dir.'/bootstrap/js/bootstrap-typeahead.js');
+$document->addScript($dir.'/js/error.js', 'text/javascript');
+$document->addScript($dir.'/js/responsive-images.js', 'text/javascript');
 
 // inline scripts
 $ga = "var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
 (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
 g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
 s.parentNode.insertBefore(g,s)}(document,'script'));";
-$document->addScriptDeclaration($ga);
+//$document->addScriptDeclaration($ga);
+
+		
+// load mobile helper
+require_once('mobile.php');

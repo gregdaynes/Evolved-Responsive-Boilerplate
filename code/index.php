@@ -7,42 +7,106 @@
 <!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-	
-	
 	<jdoc:include type="head" />
-	
-
 </head>
-<body>
+<body id="bootstrap-js">
 	<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
 	     chromium.org/developers/how-tos/chrome-frame-getting-started -->
 	<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 	
+	<!-- Toolbar -->
 	<header>
 		<jdoc:include type="modules" name="toolbar" />
 		<jdoc:include type="modules" name="icon" />
 		<jdoc:include type="modules" name="title" />
 		
-		<jdoc:include type="message" />
+		<div class="navbar navbar-fixed-top">
+		  <div class="navbar-inner">
+		    <div class="container">
+		 
+		      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+		      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </a>
+		 
+		      <!-- Be sure to leave the brand out there if you want it shown -->
+		      <a class="brand" href="#">Joomla</a>
+		 
+		      <!-- Everything you want hidden at 940px or less, place within here -->
+		      <div class="nav-collapse">
+		        <jdoc:include type="modules" name="navbar-menu" style="navBarMenu" />
+		        <jdoc:include type="modules" name="navbar-search" />
+		      </div>
+		 
+		    </div>
+		  </div>
+		</div>
+		
+		<div role="message" class="container">			
+			<jdoc:include type="message" />
+		</div>
+		
+		
+		
 	</header>
+	<!-- Toolbar -->
 	
-	<div role="main">
-		<jdoc:include type="modules" name="top" />
+	<!-- Introduction -->
+	<div role="introduction" class="container">
+		<div class="row">
+			<div class="span12">
+				<img src="http://placehold.it/940x223/f12c7e/ffffff" />
+			</div>
+		</div>
+	</div>
+	<!-- Introduction -->
+	
+	<!-- Showcase -->
+	<div class="container">
+		<div class="row">
+			<div class="span4">
+				<a href="#" class="">
+					<img src="http://placehold.it/300x100" >
+				</a>
+			</div>
+			<div class="span4">
+				<a href="#" class="">
+					<img src="http://placehold.it/300x100">
+				</a>
+			</div>
+			<div class="span4">
+				<a href="#" class="">
+					<img src="http://placehold.it/300x100">
+				</a>
+			</div>
+			
+		</div>
+	</div>
+	<!-- Showcase -->
+	
+	<div id="main" role="main" class="container">
+		<div class="row">
+			<div class="span8">
+				
+				<jdoc:include type="component" />
+				
+				<jdoc:include type="modules" name="position-2" />
+			</div>
+			
+			<div class="span4">
+				<jdoc:include type="modules" name="right-top" style="stackedPills" />
+				<jdoc:include type="modules" name="right" />
+			</div>
+		</div>
 		
-		<jdoc:include type="modules" name="left" />
-		<jdoc:include type="component" />
-		<jdoc:include type="modules" name="right" />
-		
-		<jdoc:include type="modules" name="user1" />
-		<jdoc:include type="modules" name="user2" />
-		<jdoc:include type="modules" name="user3" />
-		<jdoc:include type="modules" name="user4" />
 	</div>
 	
 	<footer>
-		<jdoc:include type="modules" name="syndicate" />
+		
 	</footer>
 	
 	<jdoc:include type="modules" name="debug" />
-	 
 </body>
+</html>
